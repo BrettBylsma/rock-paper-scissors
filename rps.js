@@ -31,6 +31,19 @@ function playRound(playerSelection, computerSelection) {
       return `You lose, scissors beats paper! Score: ${playerScore} to ${computerScore} `
     } else return `It's a tie!  Try again.  Score: ${playerScore} to ${computerScore}`
   }
-  const playerSelection='rock';
-  const computerSelection=computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+  
+function game() {
+  for (let step=0; step <5; step++) {
+    const computerSelection=computerPlay();
+    let playerSelection=prompt('Rock, Paper, or Scissors');
+    playerSelection=playerSelection.toLowerCase();
+    console.log(playRound(playerSelection, computerSelection));
+  }
+ if (playerScore>computerScore) {
+   console.log(`You Win! Score: ${playerScore} to ${computerScore}`);
+ } else if (playerScore<computerScore) {
+   console.log(`You Lose! Score: ${playerScore} to ${computerScore}`)
+} else 
+  console.log(`Its a Tie! Score: ${playerScore} to ${computerScore}`);
+}
+game();
